@@ -24,6 +24,10 @@ public class Kalkulator {
     public boolean czyPoprawny(String peselStr) throws PESELException {
         this.peselArr = new int[11];
         try {
+
+            if(peselStr.length() > 11)
+                return false;
+
             for(int i = 0; i < 11; i++) {
                 String c = peselStr.substring(i, i+1);
                 this.peselArr[i] = Integer.parseInt(c);
@@ -37,6 +41,9 @@ public class Kalkulator {
                 return false;
             if(this.dzien > 31 || this.dzien == 0)
                 return false;
+        }
+        catch (NullPointerException e) {
+            throw new PESELException("Pusty PESEL");
         }
         catch (IndexOutOfBoundsException e) {
             throw new PESELException("PESEL powinien miec 11 znakow");

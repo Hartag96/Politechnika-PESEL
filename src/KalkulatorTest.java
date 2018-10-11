@@ -11,10 +11,19 @@ public class KalkulatorTest {
         this.kalkulator = new Kalkulator();
     }
 
+
     @Test(expected = PESELException.class)
-    public void czyPoprawny() throws PESELException {
+    public void czyPoprawnyWyjatek() throws PESELException {
         kalkulator.czyPoprawny("9601a423124");
+    }
+
+    @Test
+    public void czyPoprawynyTrue() throws PESELException{
         assertEquals(true, kalkulator.czyPoprawny("00112212345"));
+    }
+
+    @Test
+    public void czyPoprawynyFalse() throws PESELException{
         assertEquals(false, kalkulator.czyPoprawny("00223312345"));
     }
 

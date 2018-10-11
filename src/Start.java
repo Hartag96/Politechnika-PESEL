@@ -11,7 +11,6 @@ public class Start {
      * Metoda main tworzy instancje klasy Aplikacja
      * wywoluje metode pobiez dane ktora oczekuje na podanie numeru pesel przez uzytkownia
      * @param args Nie uzywane
-     * @return nic
      */
     public static void main(String[] args){
         Aplikacja aplikacja = new Aplikacja();
